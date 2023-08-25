@@ -6,9 +6,10 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            background-image: url('your_game_of_thrones_image.jpg');
             background-size: cover;
             background-repeat: no-repeat;
+            background-position: center center; /* Ensure the image is always centered, regardless of its size */
+            transition: background-image 0.5s ease; /* Smooth transition between changes */
         }
     </style>
 </head>
@@ -26,5 +27,26 @@
 </div>
 <script src="/socket.io/socket.io.js"></script>
 <script src="app.js"></script>
+<script>
+    let currentImageIndex = 0;
+    const imageList = [
+        '1.jpg', 
+        '2.jpg', 
+        '3.jpg', 
+        '4.jpg', 
+        '5.jpg'
+    ];
+
+    function changeBackgroundImage() {
+        document.body.style.backgroundImage = `url(${imageList[currentImageIndex]})`;
+        currentImageIndex = (currentImageIndex + 1) % imageList.length; // Loop over the images
+    }
+    
+    // Call once immediately
+    changeBackgroundImage();
+    // Then set an interval to change every 5 seconds (you can adjust this duration as needed)
+    setInterval(changeBackgroundImage, 5000);
+
+</script>
 </body>
 </html>
