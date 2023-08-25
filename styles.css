@@ -41,3 +41,9 @@ body {
     border-top: 1px solid #ddd;
     width: 100%;
 }
+
+/* Styles for online users */
+.online {
+    color: yellow;
+    font-weight: bold;
+}
