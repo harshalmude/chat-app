@@ -6,6 +6,10 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
+            background-color: black;
+        }
+
+        #app {
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center center; /* Ensure the image is always centered, regardless of its size */
@@ -38,14 +42,14 @@
     ];
 
     function changeBackgroundImage() {
-        document.body.style.backgroundImage = `url(${imageList[currentImageIndex]})`;
+        document.getElementById('app').style.backgroundImage = `url(${imageList[currentImageIndex]})`;
         currentImageIndex = (currentImageIndex + 1) % imageList.length; // Loop over the images
     }
     
     // Call once immediately
     changeBackgroundImage();
-    // Then set an interval to change every 5 seconds (you can adjust this duration as needed)
-    setInterval(changeBackgroundImage, 5000);
+    // Then set an interval to change every 2.5 seconds (you can adjust this duration as needed)
+    setInterval(changeBackgroundImage, 2500);
 
 </script>
 </body>
