@@ -75,5 +75,5 @@ function handleLocalCommand(command) {
 }
 
 socket.on('user_typing', (userId) => {
-    typing.textContent = userId + ' is typing...';
+    typing.textContent = username + ' is typing...';
 });
